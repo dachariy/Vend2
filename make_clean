@@ -1,0 +1,1 @@
+rm -rf csrc sim.log simv simv.daidir ucli.key vc_hdrs.h simv.cst tr_db.log waves.vcd vend2_*log> /dev/null 

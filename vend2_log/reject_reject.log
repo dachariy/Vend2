@@ -1,0 +1,410 @@
+Command: /home/014558648/Documents/EE273_LV_UVM/Vend2/vend2/./simv -l sim.log +UVM_MAX_QUIT_COUNT=10000 +UVM_TESTNAME=vend2_req_rej_test +NUM_TXNS=5
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12; Runtime version R-2020.12;  Mar 12 16:57 2022
+UVM_INFO /home/morris/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test vend2_req_rej_test...
+UVM_INFO @ 0: reporter [MAXQUITSET] '+UVM_MAX_QUIT_COUNT=10000' provided on the command line is being applied.
+UVM_INFO /home/morris/uvm-1.2/src/base/uvm_root.svh(579) @ 0: reporter [UVMTOP] UVM testbench topology:
+----------------------------------------------------------------
+Name                       Type                      Size  Value
+----------------------------------------------------------------
+uvm_test_top               vend2_req_rej_test        -     @345 
+  env                      vend2_env                 -     @360 
+    agent                  vend2_agent               -     @369 
+      driver               vend2_driver              -     @406 
+        rsp_port           uvm_analysis_port         -     @425 
+        seq_item_port      uvm_seq_item_pull_port    -     @415 
+      functional_monitor   vend2_functional_monitor  -     @388 
+        mon_ap             uvm_analysis_port         -     @574 
+      sequencer            uvm_sequencer             -     @435 
+        rsp_export         uvm_analysis_export       -     @444 
+        seq_item_export    uvm_seq_item_pull_imp     -     @562 
+        arbitration_queue  array                     0     -    
+        lock_queue         array                     0     -    
+        num_last_reqs      integral                  32    'd1  
+        num_last_rsps      integral                  32    'd1  
+      timing_monitor       vend2_timing_monitor      -     @397 
+        mon_ap             uvm_analysis_port         -     @590 
+    scbd                   vend2_scoreboard          -     @378 
+      ap_imp               uvm_analysis_imp          -     @600 
+----------------------------------------------------------------
+
+UVM_INFO vend2_base_test.sv(32) @ 0: uvm_test_top [vend2_req_rej_test] Starting Run_Phase
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @640                                      
+  action                       action_e               2     RESET                                     
+  money_in                     integral               12    'd0                                       
+  money_amount                 array(money_amount_e)  5     -                                         
+    [0]                        money_amount_e         4     BAD                                       
+    [1]                        money_amount_e         4     BAD                                       
+    [2]                        money_amount_e         4     BAD                                       
+    [3]                        money_amount_e         4     BAD                                       
+    [4]                        money_amount_e         4     BAD                                       
+  amount                       real                   64    0.000000                                  
+  hopper                       integral               16    'ha77f                                    
+  vend_amount                  integral               12    'd69                                      
+  begin_time                   time                   64    0                                         
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+UVM_INFO vend2_request_reject_sequence.sv(29) @ 1500: uvm_test_top.env.agent.sequencer@@reset_seq [vend2_reject_request_sequence] Sending Transaction # 1
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @674                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd200                                     
+  money_amount                 array(money_amount_e)  41    -                                         
+    [0]                        money_amount_e         4     DOLLAR_BILL                               
+    [1]                        money_amount_e         4     NICKLE                                    
+    [2]                        money_amount_e         4     NICKLE                                    
+    [3]                        money_amount_e         4     NICKLE                                    
+    [4]                        money_amount_e         4     DIME                                      
+    ...                        ...                    ...   ...                                       
+    [36]                       money_amount_e         4     NICKLE                                    
+    [37]                       money_amount_e         4     NICKLE                                    
+    [38]                       money_amount_e         4     DOLLAR_BILL                               
+    [39]                       money_amount_e         4     DIME                                      
+    [40]                       money_amount_e         4     NICKLE                                    
+  amount                       real                   64    10.000000                                 
+  hopper                       integral               16    'h9c06                                    
+  vend_amount                  integral               12    'd2000                                    
+  begin_time                   time                   64    1500                                      
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @678                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd0                                       
+  money_amount                 array(money_amount_e)  1     -                                         
+    [0]                        money_amount_e         4     BAD                                       
+  amount                       real                   64    0.000000                                  
+  hopper                       integral               16    'h76f                                     
+  vend_amount                  integral               12    'd100                                     
+  begin_time                   time                   64    1870500                                   
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @682                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd0                                       
+  money_amount                 array(money_amount_e)  1     -                                         
+    [0]                        money_amount_e         4     BAD                                       
+  amount                       real                   64    0.000000                                  
+  hopper                       integral               16    'h3099                                    
+  vend_amount                  integral               12    'd100                                     
+  begin_time                   time                   64    1993510                                   
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+UVM_INFO vend2_request_reject_sequence.sv(29) @ 2062500: uvm_test_top.env.agent.sequencer@@reset_seq [vend2_reject_request_sequence] Sending Transaction # 2
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @688                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd200                                     
+  money_amount                 array(money_amount_e)  56    -                                         
+    [0]                        money_amount_e         4     DIME                                      
+    [1]                        money_amount_e         4     QUARTER                                   
+    [2]                        money_amount_e         4     QUARTER                                   
+    [3]                        money_amount_e         4     BAD                                       
+    [4]                        money_amount_e         4     DIME                                      
+    ...                        ...                    ...   ...                                       
+    [51]                       money_amount_e         4     QUARTER                                   
+    [52]                       money_amount_e         4     DIME                                      
+    [53]                       money_amount_e         4     QUARTER                                   
+    [54]                       money_amount_e         4     QUARTER                                   
+    [55]                       money_amount_e         4     QUARTER                                   
+  amount                       real                   64    10.000000                                 
+  hopper                       integral               16    'h205e                                    
+  vend_amount                  integral               12    'd2000                                    
+  begin_time                   time                   64    2062500                                   
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @692                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd0                                       
+  money_amount                 array(money_amount_e)  1     -                                         
+    [0]                        money_amount_e         4     BAD                                       
+  amount                       real                   64    0.000000                                  
+  hopper                       integral               16    'h27b3                                    
+  vend_amount                  integral               12    'd100                                     
+  begin_time                   time                   64    4606500                                   
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @696                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd0                                       
+  money_amount                 array(money_amount_e)  0     -                                         
+  amount                       real                   64    0.000000                                  
+  hopper                       integral               16    'h5cf7                                    
+  vend_amount                  integral               12    'd100                                     
+  begin_time                   time                   64    4729510                                   
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+UVM_INFO vend2_request_reject_sequence.sv(29) @ 4753500: uvm_test_top.env.agent.sequencer@@reset_seq [vend2_reject_request_sequence] Sending Transaction # 3
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @702                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd200                                     
+  money_amount                 array(money_amount_e)  25    -                                         
+    [0]                        money_amount_e         4     HALF                                      
+    [1]                        money_amount_e         4     DOLLAR_COIN                               
+    [2]                        money_amount_e         4     NICKLE                                    
+    [3]                        money_amount_e         4     QUARTER                                   
+    [4]                        money_amount_e         4     HALF                                      
+    ...                        ...                    ...   ...                                       
+    [20]                       money_amount_e         4     DOLLAR_COIN                               
+    [21]                       money_amount_e         4     NICKLE                                    
+    [22]                       money_amount_e         4     DOLLAR_COIN                               
+    [23]                       money_amount_e         4     DOLLAR_COIN                               
+    [24]                       money_amount_e         4     DOLLAR_COIN                               
+  amount                       real                   64    10.000000                                 
+  hopper                       integral               16    'ha276                                    
+  vend_amount                  integral               12    'd2000                                    
+  begin_time                   time                   64    4753500                                   
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @706                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd0                                       
+  money_amount                 array(money_amount_e)  2     -                                         
+    [0]                        money_amount_e         4     BAD                                       
+    [1]                        money_amount_e         4     BAD                                       
+  amount                       real                   64    0.000000                                  
+  hopper                       integral               16    'h852                                     
+  vend_amount                  integral               12    'd100                                     
+  begin_time                   time                   64    5902500                                   
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @710                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd0                                       
+  money_amount                 array(money_amount_e)  1     -                                         
+    [0]                        money_amount_e         4     BAD                                       
+  amount                       real                   64    0.000000                                  
+  hopper                       integral               16    'hcf1d                                    
+  vend_amount                  integral               12    'd100                                     
+  begin_time                   time                   64    6070510                                   
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+UVM_INFO vend2_request_reject_sequence.sv(29) @ 6139500: uvm_test_top.env.agent.sequencer@@reset_seq [vend2_reject_request_sequence] Sending Transaction # 4
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @716                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd200                                     
+  money_amount                 array(money_amount_e)  5     -                                         
+    [0]                        money_amount_e         4     BAD                                       
+    [1]                        money_amount_e         4     TEN                                       
+    [2]                        money_amount_e         4     BAD                                       
+    [3]                        money_amount_e         4     BAD                                       
+    [4]                        money_amount_e         4     BAD                                       
+  amount                       real                   64    10.000000                                 
+  hopper                       integral               16    'ha20e                                    
+  vend_amount                  integral               12    'd2000                                    
+  begin_time                   time                   64    6139500                                   
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @720                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd0                                       
+  money_amount                 array(money_amount_e)  3     -                                         
+    [0]                        money_amount_e         4     BAD                                       
+    [1]                        money_amount_e         4     BAD                                       
+    [2]                        money_amount_e         4     BAD                                       
+  amount                       real                   64    0.000000                                  
+  hopper                       integral               16    'hb484                                    
+  vend_amount                  integral               12    'd100                                     
+  begin_time                   time                   64    6388500                                   
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @724                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd0                                       
+  money_amount                 array(money_amount_e)  0     -                                         
+  amount                       real                   64    0.000000                                  
+  hopper                       integral               16    'h2227                                    
+  vend_amount                  integral               12    'd100                                     
+  begin_time                   time                   64    6601510                                   
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+UVM_INFO vend2_request_reject_sequence.sv(29) @ 6625500: uvm_test_top.env.agent.sequencer@@reset_seq [vend2_reject_request_sequence] Sending Transaction # 5
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @730                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd200                                     
+  money_amount                 array(money_amount_e)  31    -                                         
+    [0]                        money_amount_e         4     BAD                                       
+    [1]                        money_amount_e         4     DIME                                      
+    [2]                        money_amount_e         4     HALF                                      
+    [3]                        money_amount_e         4     QUARTER                                   
+    [4]                        money_amount_e         4     HALF                                      
+    ...                        ...                    ...   ...                                       
+    [26]                       money_amount_e         4     DOLLAR_COIN                               
+    [27]                       money_amount_e         4     BAD                                       
+    [28]                       money_amount_e         4     DOLLAR_COIN                               
+    [29]                       money_amount_e         4     DOLLAR_BILL                               
+    [30]                       money_amount_e         4     DIME                                      
+  amount                       real                   64    10.000000                                 
+  hopper                       integral               16    'h2db6                                    
+  vend_amount                  integral               12    'd2000                                    
+  begin_time                   time                   64    6625500                                   
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @734                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd0                                       
+  money_amount                 array(money_amount_e)  3     -                                         
+    [0]                        money_amount_e         4     BAD                                       
+    [1]                        money_amount_e         4     BAD                                       
+    [2]                        money_amount_e         4     BAD                                       
+  amount                       real                   64    0.000000                                  
+  hopper                       integral               16    'h3e14                                    
+  vend_amount                  integral               12    'd100                                     
+  begin_time                   time                   64    8044500                                   
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @738                                      
+  action                       action_e               2     VEND                                      
+  money_in                     integral               12    'd0                                       
+  money_amount                 array(money_amount_e)  2     -                                         
+    [0]                        money_amount_e         4     BAD                                       
+    [1]                        money_amount_e         4     BAD                                       
+  amount                       real                   64    0.000000                                  
+  hopper                       integral               16    'h74ca                                    
+  vend_amount                  integral               12    'd100                                     
+  begin_time                   time                   64    8257510                                   
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+UVM_INFO /home/morris/uvm-1.2/src/base/uvm_objection.svh(1270) @ 13371500: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO vend2_base_test.sv(44) @ 13371500: uvm_test_top [final_phase] TEST_RESULT: PASS
+UVM_INFO /home/morris/uvm-1.2/src/base/uvm_report_server.svh(847) @ 13371500: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+Quit count :     0 of 10000
+** Report counts by severity
+UVM_INFO :   12
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[MAXQUITSET]     1
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+[final_phase]     1
+[vend2_reject_request_sequence]     5
+[vend2_req_rej_test]     1
+
+$finish called from file "/home/morris/uvm-1.2/src/base/uvm_root.svh", line 517.
+$finish at simulation time             13371500
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1337150000 ps
+CPU Time:      1.270 seconds;       Data structure size:   0.2Mb
+Sat Mar 12 16:57:57 2022

@@ -1,0 +1,4 @@
+corner_value.log:UVM_INFO vend2_base_test.sv(44) @ 27286500: uvm_test_top [final_phase] TEST_RESULT: PASS
+random.log:UVM_INFO vend2_base_test.sv(44) @ 40947500: uvm_test_top [final_phase] TEST_RESULT: PASS
+reject_reject.log:UVM_INFO vend2_base_test.sv(44) @ 13371500: uvm_test_top [final_phase] TEST_RESULT: PASS
+sanity_txn.log:UVM_INFO vend2_base_test.sv(44) @ 52051510: uvm_test_top [final_phase] TEST_RESULT: PASS

@@ -1,0 +1,655 @@
+Command: /home/014558648/Documents/EE273_LV_UVM/Vend2/vend2/./simv -l sim.log +UVM_MAX_QUIT_COUNT=10000 +UVM_TESTNAME=vend2_txn_test +NUM_TXNS=20
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12; Runtime version R-2020.12;  Mar 12 16:57 2022
+UVM_INFO /home/morris/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test vend2_txn_test...
+UVM_INFO @ 0: reporter [MAXQUITSET] '+UVM_MAX_QUIT_COUNT=10000' provided on the command line is being applied.
+UVM_INFO /home/morris/uvm-1.2/src/base/uvm_root.svh(579) @ 0: reporter [UVMTOP] UVM testbench topology:
+----------------------------------------------------------------
+Name                       Type                      Size  Value
+----------------------------------------------------------------
+uvm_test_top               vend2_txn_test            -     @345 
+  env                      vend2_env                 -     @360 
+    agent                  vend2_agent               -     @369 
+      driver               vend2_driver              -     @406 
+        rsp_port           uvm_analysis_port         -     @425 
+        seq_item_port      uvm_seq_item_pull_port    -     @415 
+      functional_monitor   vend2_functional_monitor  -     @388 
+        mon_ap             uvm_analysis_port         -     @574 
+      sequencer            uvm_sequencer             -     @435 
+        rsp_export         uvm_analysis_export       -     @444 
+        seq_item_export    uvm_seq_item_pull_imp     -     @562 
+        arbitration_queue  array                     0     -    
+        lock_queue         array                     0     -    
+        num_last_reqs      integral                  32    'd1  
+        num_last_rsps      integral                  32    'd1  
+      timing_monitor       vend2_timing_monitor      -     @397 
+        mon_ap             uvm_analysis_port         -     @590 
+    scbd                   vend2_scoreboard          -     @378 
+      ap_imp               uvm_analysis_imp          -     @600 
+----------------------------------------------------------------
+
+UVM_INFO vend2_base_test.sv(32) @ 0: uvm_test_top [vend2_txn_test] Starting Run_Phase
+------------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                     
+------------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @640                                      
+  action                       action_e               2     RESET                                     
+  money_in                     integral               12    'd0                                       
+  money_amount                 array(money_amount_e)  5     -                                         
+    [0]                        money_amount_e         4     BAD                                       
+    [1]                        money_amount_e         4     BAD                                       
+    [2]                        money_amount_e         4     BAD                                       
+    [3]                        money_amount_e         4     BAD                                       
+    [4]                        money_amount_e         4     BAD                                       
+  amount                       real                   64    0.000000                                  
+  hopper                       integral               16    'ha77f                                    
+  vend_amount                  integral               12    'd69                                      
+  begin_time                   time                   64    0                                         
+  depth                        int                    32    'd2                                       
+  parent sequence (name)       string                 9     reset_seq                                 
+  parent sequence (full name)  string                 42    uvm_test_top.env.agent.sequencer.reset_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer          
+------------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 1500: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 1
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @676                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd1998                                   
+  money_amount                 array(money_amount_e)  82    -                                        
+    [0]                        money_amount_e         4     FIVE                                     
+    [1]                        money_amount_e         4     DOLLAR_BILL                              
+    [2]                        money_amount_e         4     DIME                                     
+    [3]                        money_amount_e         4     DIME                                     
+    [4]                        money_amount_e         4     DOLLAR_BILL                              
+    ...                        ...                    ...   ...                                      
+    [77]                       money_amount_e         4     DIME                                     
+    [78]                       money_amount_e         4     DOLLAR_BILL                              
+    [79]                       money_amount_e         4     DOLLAR_BILL                              
+    [80]                       money_amount_e         4     DIME                                     
+    [81]                       money_amount_e         4     DOLLAR_BILL                              
+  amount                       real                   64    99.900000                                
+  hopper                       integral               16    'h46c2                                   
+  vend_amount                  integral               12    'd1913                                   
+  begin_time                   time                   64    1500                                     
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 4013510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 2
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @682                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd2000                                   
+  money_amount                 array(money_amount_e)  8     -                                        
+    [0]                        money_amount_e         4     TEN                                      
+    [1]                        money_amount_e         4     BAD                                      
+    [2]                        money_amount_e         4     TWENTY                                   
+    [3]                        money_amount_e         4     TEN                                      
+    [4]                        money_amount_e         4     TWENTY                                   
+    [5]                        money_amount_e         4     TEN                                      
+    [6]                        money_amount_e         4     TEN                                      
+    [7]                        money_amount_e         4     TWENTY                                   
+  amount                       real                   64    100.000000                               
+  hopper                       integral               16    'h9ad6                                   
+  vend_amount                  integral               12    'd1708                                   
+  begin_time                   time                   64    4013510                                  
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 4816510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 3
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @688                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd1995                                   
+  money_amount                 array(money_amount_e)  64    -                                        
+    [0]                        money_amount_e         4     DOLLAR_COIN                              
+    [1]                        money_amount_e         4     NICKLE                                   
+    [2]                        money_amount_e         4     DIME                                     
+    [3]                        money_amount_e         4     DIME                                     
+    [4]                        money_amount_e         4     DOLLAR_COIN                              
+    ...                        ...                    ...   ...                                      
+    [59]                       money_amount_e         4     TEN                                      
+    [60]                       money_amount_e         4     QUARTER                                  
+    [61]                       money_amount_e         4     DIME                                     
+    [62]                       money_amount_e         4     DIME                                     
+    [63]                       money_amount_e         4     DOLLAR_COIN                              
+  amount                       real                   64    99.750000                                
+  hopper                       integral               16    'h5029                                   
+  vend_amount                  integral               12    'd1824                                   
+  begin_time                   time                   64    4816510                                  
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 8080510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 4
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @694                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd1998                                   
+  money_amount                 array(money_amount_e)  46    -                                        
+    [0]                        money_amount_e         4     DIME                                     
+    [1]                        money_amount_e         4     DIME                                     
+    [2]                        money_amount_e         4     QUARTER                                  
+    [3]                        money_amount_e         4     DIME                                     
+    [4]                        money_amount_e         4     HALF                                     
+    ...                        ...                    ...   ...                                      
+    [41]                       money_amount_e         4     FIVE                                     
+    [42]                       money_amount_e         4     DIME                                     
+    [43]                       money_amount_e         4     FIVE                                     
+    [44]                       money_amount_e         4     DIME                                     
+    [45]                       money_amount_e         4     FIVE                                     
+  amount                       real                   64    99.900000                                
+  hopper                       integral               16    'h46b0                                   
+  vend_amount                  integral               12    'd1732                                   
+  begin_time                   time                   64    8080510                                  
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 10534510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 5
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @700                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd1997                                   
+  money_amount                 array(money_amount_e)  69    -                                        
+    [0]                        money_amount_e         4     DIME                                     
+    [1]                        money_amount_e         4     NICKLE                                   
+    [2]                        money_amount_e         4     DIME                                     
+    [3]                        money_amount_e         4     HALF                                     
+    [4]                        money_amount_e         4     DIME                                     
+    ...                        ...                    ...   ...                                      
+    [64]                       money_amount_e         4     DIME                                     
+    [65]                       money_amount_e         4     DIME                                     
+    [66]                       money_amount_e         4     BAD                                      
+    [67]                       money_amount_e         4     HALF                                     
+    [68]                       money_amount_e         4     HALF                                     
+  amount                       real                   64    99.850000                                
+  hopper                       integral               16    'hbe6e                                   
+  vend_amount                  integral               12    'd1647                                   
+  begin_time                   time                   64    10534510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 13960510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 6
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @706                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd1994                                   
+  money_amount                 array(money_amount_e)  59    -                                        
+    [0]                        money_amount_e         4     TEN                                      
+    [1]                        money_amount_e         4     HALF                                     
+    [2]                        money_amount_e         4     HALF                                     
+    [3]                        money_amount_e         4     DIME                                     
+    [4]                        money_amount_e         4     HALF                                     
+    ...                        ...                    ...   ...                                      
+    [54]                       money_amount_e         4     DIME                                     
+    [55]                       money_amount_e         4     BAD                                      
+    [56]                       money_amount_e         4     HALF                                     
+    [57]                       money_amount_e         4     HALF                                     
+    [58]                       money_amount_e         4     HALF                                     
+  amount                       real                   64    99.700000                                
+  hopper                       integral               16    'h4c02                                   
+  vend_amount                  integral               12    'd1860                                   
+  begin_time                   time                   64    13960510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 16938510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 7
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @712                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd2000                                   
+  money_amount                 array(money_amount_e)  31    -                                        
+    [0]                        money_amount_e         4     QUARTER                                  
+    [1]                        money_amount_e         4     BAD                                      
+    [2]                        money_amount_e         4     QUARTER                                  
+    [3]                        money_amount_e         4     DOLLAR_BILL                              
+    [4]                        money_amount_e         4     FIVE                                     
+    ...                        ...                    ...   ...                                      
+    [26]                       money_amount_e         4     DOLLAR_BILL                              
+    [27]                       money_amount_e         4     FIVE                                     
+    [28]                       money_amount_e         4     FIVE                                     
+    [29]                       money_amount_e         4     DOLLAR_BILL                              
+    [30]                       money_amount_e         4     FIVE                                     
+  amount                       real                   64    100.000000                               
+  hopper                       integral               16    'ha517                                   
+  vend_amount                  integral               12    'd1823                                   
+  begin_time                   time                   64    16938510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 18776510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 8
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @718                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd1997                                   
+  money_amount                 array(money_amount_e)  51    -                                        
+    [0]                        money_amount_e         4     DOLLAR_BILL                              
+    [1]                        money_amount_e         4     DOLLAR_BILL                              
+    [2]                        money_amount_e         4     BAD                                      
+    [3]                        money_amount_e         4     DIME                                     
+    [4]                        money_amount_e         4     DOLLAR_BILL                              
+    ...                        ...                    ...   ...                                      
+    [46]                       money_amount_e         4     BAD                                      
+    [47]                       money_amount_e         4     FIVE                                     
+    [48]                       money_amount_e         4     DOLLAR_BILL                              
+    [49]                       money_amount_e         4     DOLLAR_BILL                              
+    [50]                       money_amount_e         4     BAD                                      
+  amount                       real                   64    99.850000                                
+  hopper                       integral               16    'h1aac                                   
+  vend_amount                  integral               12    'd1673                                   
+  begin_time                   time                   64    18776510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 21394510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 9
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @724                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd1997                                   
+  money_amount                 array(money_amount_e)  65    -                                        
+    [0]                        money_amount_e         4     DIME                                     
+    [1]                        money_amount_e         4     DIME                                     
+    [2]                        money_amount_e         4     DIME                                     
+    [3]                        money_amount_e         4     DIME                                     
+    [4]                        money_amount_e         4     FIVE                                     
+    ...                        ...                    ...   ...                                      
+    [60]                       money_amount_e         4     FIVE                                     
+    [61]                       money_amount_e         4     DIME                                     
+    [62]                       money_amount_e         4     DIME                                     
+    [63]                       money_amount_e         4     TEN                                      
+    [64]                       money_amount_e         4     DIME                                     
+  amount                       real                   64    99.850000                                
+  hopper                       integral               16    'ha504                                   
+  vend_amount                  integral               12    'd1691                                   
+  begin_time                   time                   64    21394510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 24583510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 10
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @730                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd1998                                   
+  money_amount                 array(money_amount_e)  40    -                                        
+    [0]                        money_amount_e         4     QUARTER                                  
+    [1]                        money_amount_e         4     FIVE                                     
+    [2]                        money_amount_e         4     TEN                                      
+    [3]                        money_amount_e         4     QUARTER                                  
+    [4]                        money_amount_e         4     QUARTER                                  
+    ...                        ...                    ...   ...                                      
+    [35]                       money_amount_e         4     FIVE                                     
+    [36]                       money_amount_e         4     NICKLE                                   
+    [37]                       money_amount_e         4     BAD                                      
+    [38]                       money_amount_e         4     FIVE                                     
+    [39]                       money_amount_e         4     QUARTER                                  
+  amount                       real                   64    99.900000                                
+  hopper                       integral               16    'h76a3                                   
+  vend_amount                  integral               12    'd1671                                   
+  begin_time                   time                   64    24583510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 26706510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 11
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @736                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd2000                                   
+  money_amount                 array(money_amount_e)  39    -                                        
+    [0]                        money_amount_e         4     DOLLAR_BILL                              
+    [1]                        money_amount_e         4     FIVE                                     
+    [2]                        money_amount_e         4     QUARTER                                  
+    [3]                        money_amount_e         4     FIVE                                     
+    [4]                        money_amount_e         4     BAD                                      
+    ...                        ...                    ...   ...                                      
+    [34]                       money_amount_e         4     DOLLAR_BILL                              
+    [35]                       money_amount_e         4     DOLLAR_BILL                              
+    [36]                       money_amount_e         4     FIVE                                     
+    [37]                       money_amount_e         4     FIVE                                     
+    [38]                       money_amount_e         4     DOLLAR_BILL                              
+  amount                       real                   64    100.000000                               
+  hopper                       integral               16    'hf16e                                   
+  vend_amount                  integral               12    'd1612                                   
+  begin_time                   time                   64    26706510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 29025510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 12
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @742                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd2000                                   
+  money_amount                 array(money_amount_e)  35    -                                        
+    [0]                        money_amount_e         4     QUARTER                                  
+    [1]                        money_amount_e         4     DOLLAR_COIN                              
+    [2]                        money_amount_e         4     QUARTER                                  
+    [3]                        money_amount_e         4     DOLLAR_BILL                              
+    [4]                        money_amount_e         4     DOLLAR_COIN                              
+    ...                        ...                    ...   ...                                      
+    [30]                       money_amount_e         4     FIVE                                     
+    [31]                       money_amount_e         4     DOLLAR_BILL                              
+    [32]                       money_amount_e         4     TEN                                      
+    [33]                       money_amount_e         4     BAD                                      
+    [34]                       money_amount_e         4     DOLLAR_BILL                              
+  amount                       real                   64    100.000000                               
+  hopper                       integral               16    'heef2                                   
+  vend_amount                  integral               12    'd1776                                   
+  begin_time                   time                   64    29025510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 30863510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 13
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @748                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd2000                                   
+  money_amount                 array(money_amount_e)  7     -                                        
+    [0]                        money_amount_e         4     BAD                                      
+    [1]                        money_amount_e         4     TWENTY                                   
+    [2]                        money_amount_e         4     TWENTY                                   
+    [3]                        money_amount_e         4     TWENTY                                   
+    [4]                        money_amount_e         4     TWENTY                                   
+    [5]                        money_amount_e         4     BAD                                      
+    [6]                        money_amount_e         4     TWENTY                                   
+  amount                       real                   64    100.000000                               
+  hopper                       integral               16    'ha788                                   
+  vend_amount                  integral               12    'd1914                                   
+  begin_time                   time                   64    30863510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 31562510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 14
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @754                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd1997                                   
+  money_amount                 array(money_amount_e)  40    -                                        
+    [0]                        money_amount_e         4     HALF                                     
+    [1]                        money_amount_e         4     TEN                                      
+    [2]                        money_amount_e         4     TEN                                      
+    [3]                        money_amount_e         4     HALF                                     
+    [4]                        money_amount_e         4     BAD                                      
+    ...                        ...                    ...   ...                                      
+    [35]                       money_amount_e         4     DOLLAR_COIN                              
+    [36]                       money_amount_e         4     HALF                                     
+    [37]                       money_amount_e         4     BAD                                      
+    [38]                       money_amount_e         4     DOLLAR_COIN                              
+    [39]                       money_amount_e         4     FIVE                                     
+  amount                       real                   64    99.850000                                
+  hopper                       integral               16    'hc739                                   
+  vend_amount                  integral               12    'd1680                                   
+  begin_time                   time                   64    31562510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 33685510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 15
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @760                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd1983                                   
+  money_amount                 array(money_amount_e)  28    -                                        
+    [0]                        money_amount_e         4     DOLLAR_COIN                              
+    [1]                        money_amount_e         4     DIME                                     
+    [2]                        money_amount_e         4     NICKLE                                   
+    [3]                        money_amount_e         4     NICKLE                                   
+    [4]                        money_amount_e         4     DOLLAR_BILL                              
+    ...                        ...                    ...   ...                                      
+    [23]                       money_amount_e         4     NICKLE                                   
+    [24]                       money_amount_e         4     DOLLAR_BILL                              
+    [25]                       money_amount_e         4     HALF                                     
+    [26]                       money_amount_e         4     DOLLAR_BILL                              
+    [27]                       money_amount_e         4     BAD                                      
+  amount                       real                   64    99.150000                                
+  hopper                       integral               16    'habe7                                   
+  vend_amount                  integral               12    'd1629                                   
+  begin_time                   time                   64    33685510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 35388510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 16
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @766                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd1999                                   
+  money_amount                 array(money_amount_e)  54    -                                        
+    [0]                        money_amount_e         4     DOLLAR_BILL                              
+    [1]                        money_amount_e         4     BAD                                      
+    [2]                        money_amount_e         4     HALF                                     
+    [3]                        money_amount_e         4     QUARTER                                  
+    [4]                        money_amount_e         4     HALF                                     
+    ...                        ...                    ...   ...                                      
+    [49]                       money_amount_e         4     HALF                                     
+    [50]                       money_amount_e         4     HALF                                     
+    [51]                       money_amount_e         4     TEN                                      
+    [52]                       money_amount_e         4     TEN                                      
+    [53]                       money_amount_e         4     DOLLAR_BILL                              
+  amount                       real                   64    99.950000                                
+  hopper                       integral               16    'h8edf                                   
+  vend_amount                  integral               12    'd1880                                   
+  begin_time                   time                   64    35388510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 38141510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 17
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @772                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd1999                                   
+  money_amount                 array(money_amount_e)  72    -                                        
+    [0]                        money_amount_e         4     DOLLAR_BILL                              
+    [1]                        money_amount_e         4     FIVE                                     
+    [2]                        money_amount_e         4     NICKLE                                   
+    [3]                        money_amount_e         4     FIVE                                     
+    [4]                        money_amount_e         4     DIME                                     
+    ...                        ...                    ...   ...                                      
+    [67]                       money_amount_e         4     DIME                                     
+    [68]                       money_amount_e         4     FIVE                                     
+    [69]                       money_amount_e         4     FIVE                                     
+    [70]                       money_amount_e         4     FIVE                                     
+    [71]                       money_amount_e         4     FIVE                                     
+  amount                       real                   64    99.950000                                
+  hopper                       integral               16    'hcc43                                   
+  vend_amount                  integral               12    'd1926                                   
+  begin_time                   time                   64    38141510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 41765510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 18
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @778                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd2000                                   
+  money_amount                 array(money_amount_e)  45    -                                        
+    [0]                        money_amount_e         4     NICKLE                                   
+    [1]                        money_amount_e         4     DOLLAR_COIN                              
+    [2]                        money_amount_e         4     DOLLAR_COIN                              
+    [3]                        money_amount_e         4     TEN                                      
+    [4]                        money_amount_e         4     NICKLE                                   
+    ...                        ...                    ...   ...                                      
+    [40]                       money_amount_e         4     NICKLE                                   
+    [41]                       money_amount_e         4     DIME                                     
+    [42]                       money_amount_e         4     DOLLAR_COIN                              
+    [43]                       money_amount_e         4     DIME                                     
+    [44]                       money_amount_e         4     NICKLE                                   
+  amount                       real                   64    100.000000                               
+  hopper                       integral               16    'hdb68                                   
+  vend_amount                  integral               12    'd1772                                   
+  begin_time                   time                   64    41765510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 44114510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 19
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @784                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd1998                                   
+  money_amount                 array(money_amount_e)  48    -                                        
+    [0]                        money_amount_e         4     DIME                                     
+    [1]                        money_amount_e         4     FIVE                                     
+    [2]                        money_amount_e         4     QUARTER                                  
+    [3]                        money_amount_e         4     TEN                                      
+    [4]                        money_amount_e         4     DOLLAR_BILL                              
+    ...                        ...                    ...   ...                                      
+    [43]                       money_amount_e         4     TEN                                      
+    [44]                       money_amount_e         4     DIME                                     
+    [45]                       money_amount_e         4     DIME                                     
+    [46]                       money_amount_e         4     DIME                                     
+    [47]                       money_amount_e         4     DOLLAR_COIN                              
+  amount                       real                   64    99.900000                                
+  hopper                       integral               16    'hbb3a                                   
+  vend_amount                  integral               12    'd1924                                   
+  begin_time                   time                   64    44114510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO vend2_sequence.sv(27) @ 46657510: uvm_test_top.env.agent.sequencer@@test_seq [vend2_sequence] Sending Transaction # 20
+-----------------------------------------------------------------------------------------------------
+Name                           Type                   Size  Value                                    
+-----------------------------------------------------------------------------------------------------
+req                            vend2_seq_item         -     @790                                     
+  action                       action_e               2     VEND                                     
+  money_in                     integral               12    'd1940                                   
+  money_amount                 array(money_amount_e)  114   -                                        
+    [0]                        money_amount_e         4     DOLLAR_COIN                              
+    [1]                        money_amount_e         4     NICKLE                                   
+    [2]                        money_amount_e         4     QUARTER                                  
+    [3]                        money_amount_e         4     QUARTER                                  
+    [4]                        money_amount_e         4     DIME                                     
+    ...                        ...                    ...   ...                                      
+    [109]                      money_amount_e         4     QUARTER                                  
+    [110]                      money_amount_e         4     DIME                                     
+    [111]                      money_amount_e         4     QUARTER                                  
+    [112]                      money_amount_e         4     QUARTER                                  
+    [113]                      money_amount_e         4     DOLLAR_COIN                              
+  amount                       real                   64    97.000000                                
+  hopper                       integral               16    'h596c                                   
+  vend_amount                  integral               12    'd1897                                   
+  begin_time                   time                   64    46657510                                 
+  depth                        int                    32    'd2                                      
+  parent sequence (name)       string                 8     test_seq                                 
+  parent sequence (full name)  string                 41    uvm_test_top.env.agent.sequencer.test_seq
+  sequencer                    string                 32    uvm_test_top.env.agent.sequencer         
+-----------------------------------------------------------------------------------------------------
+UVM_INFO /home/morris/uvm-1.2/src/base/uvm_objection.svh(1270) @ 52051510: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO vend2_base_test.sv(44) @ 52051510: uvm_test_top [final_phase] TEST_RESULT: PASS
+UVM_INFO /home/morris/uvm-1.2/src/base/uvm_report_server.svh(847) @ 52051510: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+Quit count :     0 of 10000
+** Report counts by severity
+UVM_INFO :   27
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[MAXQUITSET]     1
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+[final_phase]     1
+[vend2_sequence]    20
+[vend2_txn_test]     1
+
+$finish called from file "/home/morris/uvm-1.2/src/base/uvm_root.svh", line 517.
+$finish at simulation time             52051510
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 5205151000 ps
+CPU Time:      1.120 seconds;       Data structure size:   0.2Mb
+Sat Mar 12 16:57:45 2022

@@ -1,0 +1,16 @@
+mkdir vend2_0_log
+./sv_uvm top.sv vend2_dut/vend2_14_0.svp +UVM_TESTNAME="vend2_txn_test" +NUM_TXNS=20
+mv -f sim.log vend2_0_log/sanity_txn.log
+
+#./sv_uvm top.sv vend2_dut/vend2_14_0.svp +UVM_TESTNAME="vend2_txn_test" +NUM_TXNS=5 +CANCEL_TEST
+#mv -f sim.log vend2_0_log/txn_cancel.log
+
+./sv_uvm top.sv vend2_dut/vend2_14_0.svp +UVM_TESTNAME="vend2_req_rej_test" +NUM_TXNS=5
+mv -f sim.log vend2_0_log/reject_reject.log
+
+./sv_uvm top.sv vend2_dut/vend2_14_0.svp +UVM_TESTNAME="vend2_corner_value_test" +NUM_TXNS=5
+mv -f sim.log vend2_0_log/corner_value.log
+
+./sv_uvm top.sv vend2_dut/vend2_14_0.svp +UVM_TESTNAME="vend2_random_test" +NUM_TXNS=10
+mv -f sim.log vend2_0_log/random.log
+
